@@ -1,41 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loading = document.getElementById("loading");
-  const content = document.getElementById("content");
-  const competitionsDiv = document.getElementById("competitions");
-
-  const API_URL = "https://api.football-data.org/v4/competitions";
+  const competitionsContainer = document.getElementById("competitions-container");
   const API_KEY = "7b6507c792f74a2b9db41cfc8fd8cf05";
+  const BASE_URL = "https://api.football-data.org/v4";
 
-  fetch(API_URL, {
-    headers: {
-      "X-Auth-Token": API_KEY,
-    },
+  fetch(`${BASE_URL}/competitions`, {
+    headers: { "X-Auth-Token": API_KEY }
   })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("API Error: " + response.status);
-      }
-      return response.json();
-    })
+    .then(res => res.json())
     .then(data => {
       loading.style.display = "none";
-      content.classList.remove("hidden");
 
-      const competitions = data.competitions;
-      competitions.forEach(comp => {
-        const div = document.createElement("div");
-        div.className = "card";
-        div.innerHTML = `
+      data.competitions.forEach(comp => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
           <h3>${comp.name}</h3>
           <p><strong>Code:</strong> ${comp.code}</p>
           <p><strong>Area:</strong> ${comp.area.name}</p>
-          <p><strong>Plan:</strong> ${comp.plan}</p>
         `;
-        competitionsDiv.appendChild(div);
+        competitionsContainer.appendChild(card);
       });
     })
-    .catch(error => {
-      loading.innerText = "Failed to load data. Check your API key or connection.";
-      console.error("Error fetching competitions:", error);
+    .catch(err => {
+      loading.textContent = "❌ Failed to load competitions.";
+      console.error(err);
     });
 });
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('visible'));
+  document.getElementById(id).classList.add('visible');
+}
