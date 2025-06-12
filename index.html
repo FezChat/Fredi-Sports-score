@@ -9,38 +9,47 @@
 <body>
   <div id="loading">🔄 Loading Fredi Sports Score...</div>
 
-  <header>
-    <h1>⚽ Fredi Sports Score</h1>
-    <nav>
-      <button onclick="showSection('competitions')">🏆 Competitions</button>
-      <button onclick="showSection('matches')">📅 Matches</button>
-      <button onclick="showSection('teams')">👥 Teams</button>
-    </nav>
-  </header>
+  <div class="dashboard">
+    <!-- Main content area -->
+    <div class="main-content">
+      <header>
+        <h1>⚽ Fredi Sports Score</h1>
+      </header>
 
-  <main>
-    <!-- Competitions Section -->
-    <section id="competitions" class="section visible">
-      <h2>🏆 Available Competitions</h2>
-      <div id="competitions-container" class="cards"></div>
-    </section>
+      <main>
+        <!-- Competitions Section -->
+        <section id="competitions" class="section visible">
+          <h2>🏆 Available Competitions</h2>
+          <div id="competitions-container" class="cards"></div>
+        </section>
 
-    <!-- Matches Section -->
-    <section id="matches" class="section">
-      <h2>📅 Today’s Matches</h2>
-      <div id="matches-container" class="cards"></div>
-    </section>
+        <!-- Matches Section -->
+        <section id="matches" class="section">
+          <h2>📅 Today’s Matches</h2>
+          <div id="matches-container" class="cards"></div>
+        </section>
 
-    <!-- Teams Section -->
-    <section id="teams" class="section">
-      <h2>👥 Teams List</h2>
-      <div id="teams-container" class="cards"></div>
-    </section>
-  </main>
+        <!-- Teams Section -->
+        <section id="teams" class="section">
+          <h2>👥 Teams List</h2>
+          <div id="teams-container" class="cards"></div>
+        </section>
+      </main>
 
-  <footer>
-    <p>© 2025 FrediTech | Powered by Football-Data.org</p>
-  </footer>
+      <footer>
+        <p>© 2025 FrediTech | Powered by Football-Data.org</p>
+      </footer>
+    </div>
+
+    <!-- Right sidebar navigation -->
+    <aside class="sidebar">
+      <nav>
+        <button onclick="showSection('competitions')">🏆 Competitions</button>
+        <button onclick="showSection('matches')">📅 Matches</button>
+        <button onclick="showSection('teams')">👥 Teams</button>
+      </nav>
+    </aside>
+  </div>
 
   <script src="script.js"></script>
 </body>
