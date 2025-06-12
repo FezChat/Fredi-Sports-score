@@ -1,5 +1,11 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   color: white;
@@ -8,9 +14,23 @@ body {
 #loading {
   text-align: center;
   font-size: 1.5rem;
-  padding: 2em;
+  padding: 1em;
   background-color: #000;
   color: #0f0;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left side (Main content) */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 header {
@@ -23,31 +43,17 @@ header {
 header h1 {
   margin: 0;
   color: #00ffff;
+  font-size: 2em;
 }
 
-nav {
-  margin-top: 1em;
-}
-
-nav button {
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 0.6em 1.2em;
-  margin: 0 0.3em;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-nav button:hover {
-  background: #0056b3;
+main {
+  flex: 1;
+  padding: 2em;
+  overflow-y: auto;
 }
 
 .section {
   display: none;
-  padding: 2em;
 }
 
 .visible {
@@ -58,6 +64,7 @@ nav button:hover {
   display: grid;
   gap: 1.5em;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 1em;
 }
 
 .card {
@@ -78,4 +85,46 @@ footer {
   text-align: center;
   padding: 1em;
   font-size: 0.9em;
+}
+
+/* Right side (Sidebar) */
+.sidebar {
+  width: 200px;
+  background: #000c;
+  padding: 2em 1em;
+  border-left: 2px solid #00ffff33;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1em;
+}
+
+.sidebar nav button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.7em 1em;
+  margin: 0.3em 0;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.sidebar nav button:hover {
+  background: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column-reverse;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    border-left: none;
+    border-top: 2px solid #00ffff33;
+  }
 }
