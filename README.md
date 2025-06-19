@@ -14,14 +14,14 @@
 <rect width="100%" height="100%" fill="#000000" />
      <text x="50%" y="50" text-anchor="middle" font-size="40" font-family="Verdana"
           fill="url(#rainbow)">
-      💻 LUCKY MD XFORCE 🤖
+      💻+LUCKY+MD+XFORCE+🤖
     </text>
     <text x="50%" y="100" text-anchor="middle" font-size="20" font-family="Verdana"
           fill="url(#rainbow)">
-      🛠️ MADE BY FREDIEZRA TECH INFO 🦟
+      🛠️+MADE+BY+FREDIEZRA+TECH+INFO+🦟
     </text>
 <text x="50%" y="160" text-anchor="middle" font-size="16" fill="white">
-      👨‍💻 Coding on PC... 😖 mosquito disturbing 💢
+      👨‍💻+Coding+on+PC...+😖+mosquito+disturbing+💢
     </text>
   </svg>
 </a>
