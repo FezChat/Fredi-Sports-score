@@ -1,5 +1,5 @@
 <p align="center">
-  [<a href="https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f" target="_blank">
+  <a href="https://whatsapp.com/channel/0029VaihcQv84Om8LP59fO3f" target="_blank">
   <svg width="100%" height="200px" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -24,5 +24,5 @@
       👨‍💻 Coding on PC... 😖 mosquito disturbing 💢
     </text>
   </svg>
-</a>]
+</a>
 </p>
